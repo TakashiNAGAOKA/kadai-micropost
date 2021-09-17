@@ -40,24 +40,9 @@ class UsersController < ApplicationController
   end
   
   def likes
-    # likesの定義、メソッドが定義されていないエラー
-    # user.rbのモデルで定義する ??
-    # 中身のmicropostが変！(followingsと同じような記述になるはず)
-    # 課題１：likes.html.erbに渡すインスタンスの生成（お気に入りのインスタンス）、
-    # 課題２：pagyで表示するmicropostのインスタンス（課題１と一緒？）
-    # paramsのidはセッションから取れるユーザのid
     @user = User.find(params[:id])
     @pagy, @favorings = pagy(@user.favorings)
     counts(@user)
-#    self.favorings.where(micropost_id: self.favorings_ids )
-#    @likes = Micropost.where(micropost_id: self.likes)
-#    @pagy, @likes = pagy(@likes.content)
-#    counts(@likes)
-#    @favorings = Favorite.find_by_user_id(user_id: params[:id])
-#    @pagy, @likes = pagy(@favorings.likes)
-#    counts(@favorings)
-#    @likes = Like.find_by(user_id: @user.id)
-#    @microposts = @likes.micropost.paginate(page: params[:page])
   end
 
   private

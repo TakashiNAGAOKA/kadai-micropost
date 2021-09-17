@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper  #追記
+  include SessionsHelper
   include Pagy::Backend
 
   private
@@ -16,9 +16,4 @@ class ApplicationController < ActionController::Base
     @count_followers = user.followers.count
     @count_likes = user.favorings.count
   end
-
-#  def mp_counts(micropost)
-#    @count_favorings = micropost.favorings.count
-#  end
-
 end
