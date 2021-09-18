@@ -4,7 +4,4 @@ class Micropost < ApplicationRecord
 
   validates :content, presence: true, length: { maximum: 255 }
 
-#  def favorites?(micropost)
-#    self.favorings.include?(micropost)
-#  end
 end
